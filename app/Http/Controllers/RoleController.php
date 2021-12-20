@@ -67,9 +67,11 @@ class RoleController extends Controller
         $products = $request->product;
         $quantity = $request->quantity;
         $rate     = $request->rate;
+        $total = $quantity * $rate;
 
         $order->product = $products;
         $order->quantity = $quantity;
+        $order->total = $total;
         $order->rate = $rate;
 
         $order->save();
